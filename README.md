@@ -26,21 +26,11 @@ Owners and managers of cake businesses will use this app to gain actionable insi
 
 ### Tech Stack
 
-- React
-- TypeScript
-- MySQL (or PostgreSQL)
-- Express
-- Client libraries: 
-    - react
-    - react-router-dom
-    - axios
-- Server libraries:
-    - knex
-    - express
-- Style:
-    - Tailwind CSS
-- Graphs
-    - Chart.js
+- React, TypeScript, MySQL (or PostgreSQL)
+- Client libraries: react, react-router-dom, axios,
+- Server libraries: knex, express
+- Style: Tailwind CSS
+- Graphs: Chart.js
 
 ### APIs
 
@@ -54,7 +44,7 @@ Owners and managers of cake businesses will use this app to gain actionable insi
 
 ### Mockups
 
-![app page design sketch]("C:\Users\Anna\Desktop\BrainStation\Projects\Capstone\anna-karlova-dashboard-project\assets\Mockup.jpeg")
+![app page design sketch]("(https://github.com/Anna-Karl/anna-karlova-dashboard-project/blob/main/assets/Mockup.jpeg)")
 
 ### Data
 
