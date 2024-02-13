@@ -1,5 +1,5 @@
 # Project Title
-Dashboard: Admin Panel Statistic for Cake Businesses
+Dashboard: Admin Panel Statistic for Businesses
 
 ## Overview
 
@@ -17,7 +17,7 @@ Owners and managers of cake businesses will use this app to gain actionable insi
 
 - As a user, I want to be able to view real-time sales data, including revenue, order volume, and average transaction value. 
 - As a user, I want to be able to analyze sales trends over time
-- As a user, I want to be able to analyze customer preferences and purchasing patterns
+- As a user, I want to be able to analyze customer preferences
 - As a user, I want to be able to see the customer reviews for each product item
 - As a user, I want to be able to add, edit, and delete the existing items
 
@@ -54,7 +54,7 @@ Owners and managers of cake businesses will use this app to gain actionable insi
 
 ### Mockups
 
-
+![app page design sketch]("C:\Users\Anna\Desktop\BrainStation\Projects\Capstone\anna-karlova-dashboard-project\assets\Mockup.jpeg")
 
 ### Data
 
@@ -96,5 +96,5 @@ Authentication/authorization is a nice-to-haves part
 - add dark theme
 - animation of graphs/numbers
 - ability to choice period of time
-- add more graphs for visualization
-# anna-karlova-dashboard-project
+- add more graphs: purchasing patterns and trends
+
