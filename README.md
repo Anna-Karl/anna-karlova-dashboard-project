@@ -49,9 +49,8 @@ Owners and managers of cake businesses will use this app to gain actionable insi
 ### Sitemap
 - Header -> Logo, Search product, SignIn
 - Sidebar -> Logo, Menu, Settings
-- Home Page -> List of product -> Product description
-- Dashboard  -> Main statistic (Average Rating, ), Visual statistic (Total revenue in %, total revenue)
-- Edit, Delete products
+- Home Page -> List of product (add, edit, delete)-> Product description
+- Dashboard  -> Main statistic (Average Rating, ), Visual statistic (Total revenue in %, Revenue by month)
 
 ### Mockups
 
@@ -76,29 +75,18 @@ Authentication/authorization is a nice-to-haves part
 
 ## Roadmap
 
-|--------------------------|-------------------------------------------------------------------|
-|          Phase           |Day 1|Day 2|Day 3|Day 4|Day 5|Day 6|Day 7|Day 8|Day 9|Day 10|Day 11|
-|--------------------------|-----------------|-------------------------------------------------|
-| Create Client            |■■■■■|     |     |     |     |     |     |     |     |      |      |
-|--------------------------|-----------------|-------------------------------------------------|
-| Create Server            |■■■■■|     |     |     |     |     |     |     |     |      |      |            
-|--------------------------|-----------------|-------------------------------------------------|
-| Database Setup           |     |■■■■■|     |     |     |     |     |     |     |      |      |
-|--------------------------|-----------------|-------------------------------------------------|
-| Frontend Development     |     |■■■■■|■■■■■|■■■■■|■■■■■|     |     |     |     |      |      |                    
-|--------------------------|-----------------|-------------------------------------------------|
-| Backend Development      |     |     |     |■■■■■|■■■■■|■■■■■|     |     |     |      |      |
-|--------------------------|-----------------|-------------------------------------------------|
-| Implement features       |     |     |     |     |     |■■■■■|■■■■■|■■■■■|     |      |      |
-|--------------------------|-----------------|-------------------------------------------------|
-|Integration and Testing   |     |     |     |     |     |     |     |     |■■■■■|      |      |
-|--------------------------|-----------------|-------------------------------------------------|
-| Work on 'nice-to-haves'  |     |     |     |     |     |     |     |     |■■■■■|■■■■■■|      |
-|--------------------------|-----------------|-------------------------------------------------|
-| Submit project           |     |     |     |     |     |     |     |     |     |■■■■■■|      |                
-|--------------------------|-----------------|-------------------------------------------------|
-| Demo Day                 |     |     |     |     |     |     |     |     |     |      |■■■■■■|
-|--------------------------|-------------------------------------------------------------------|
+| Phase                    | Day 1 | Day 2 | Day 3 | Day 4 | Day 5 | Day 6 | Day 7 | Day 8 | Day 9 | Day 10 | Day 11 |
+|--------------------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|--------|
+| Create Client            | ■■■■■ |       |       |       |       |       |       |       |       |        |        |
+| Create Server            | ■■■■■ |       |       |       |       |       |       |       |       |        |        |
+| Database Setup           |       | ■■■■■ |       |       |       |       |       |       |       |        |        |
+| Frontend Development     |       | ■■■■■ | ■■■■■ | ■■■■■ | ■■■■■ |       |       |       |       |        |        |
+| Backend Development      |       |       |       | ■■■■■ | ■■■■■ | ■■■■■ |       |       |       |        |        |
+| Implement features       |       |       |       |       |       | ■■■■■ | ■■■■■ | ■■■■■ |       |        |        |
+| Integration and Testing  |       |       |       |       |       |       |       |       | ■■■■■ |        |        |
+| Work on  'nice-to-haves' |       |       |       |       |       |       |       |       | ■■■■■ | ■■■■■■ |        |
+| Submit project           |       |       |       |       |       |       |       |       |       | ■■■■■■ |        |
+| Demo Day                 |       |       |       |       |       |       |       |       |       |        | ■■■■■■ |
 
 
 ## Nice-to-haves
