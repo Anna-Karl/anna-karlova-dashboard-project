@@ -44,7 +44,7 @@ Owners and managers of cake businesses will use this app to gain actionable insi
 
 ### Mockups
 
-![app page design sketch]("(https://github.com/Anna-Karl/anna-karlova-dashboard-project/blob/main/assets/Mockup.jpeg)")
+![Mockup](https://github.com/Anna-Karl/anna-karlova-dashboard-project/assets/112638974/78ec730f-f65b-457c-9bb0-8c8321477e1f)
 
 ### Data
 
