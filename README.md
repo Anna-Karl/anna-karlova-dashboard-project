@@ -3,15 +3,15 @@ Dashboard: Admin Panel Statistic for Businesses
 
 ## Overview
 
- The app is a comprehensive dashboard designed to streamline the management of local bakeries specializing in cakes, providing owners and managers with valuable insights into sales performance, inventory management, and customer preferences.
+The app is a comprehensive dashboard designed to streamline the management of local bakeries, providing owners and managers with valuable insights into sales performance, inventory management, and customer preferences.
 
 ### Problem
 
-Cake businesses often struggle with effectively managing their operations, leading to challenges such as stockouts, inefficient inventory management, and difficulty in understanding customer preferences. The Dashboard addresses these pain points by offering a centralized platform for data analysis and empowering bakery owners to make informed decisions and optimize their operations for success.
+Local food businesses often struggle with effectively managing their operations, leading to challenges such as stockouts, inefficient inventory management, and difficulty in understanding customer preferences. The Dashboard addresses these pain points by offering a centralized platform for data analysis and empowering bakery owners to make informed decisions and optimize their operations for success.
 
 ### User Profile
 
-Owners and managers of cake businesses will use this app to gain actionable insights into their operations. They will access the dashboard through a web browser on their desktop or mobile device. Special considerations include the need for intuitive user interfaces and customizable reporting features to accommodate different business needs.
+Owners and managers of bakeries will use this app to gain actionable insights into their operations. They will access the dashboard through a web browser on their devices. Special considerations include the need for intuitive user interfaces and customizable reporting features to accommodate different business needs.
 
 ### Features
 
@@ -19,7 +19,7 @@ Owners and managers of cake businesses will use this app to gain actionable insi
 - As a user, I want to be able to analyze sales trends over time
 - As a user, I want to be able to analyze customer preferences
 - As a user, I want to be able to see the customer reviews for each product item
-- As a user, I want to be able to add, edit, and delete the existing items
+- As a user, I want to be able to add, edit, and delete the existing items (nice-to-haves)
 
 
 ## Implementation
@@ -39,8 +39,8 @@ Owners and managers of cake businesses will use this app to gain actionable insi
 ### Sitemap
 - Header -> Logo, Search product, SignIn
 - Sidebar -> Logo, Menu, Settings
-- Home Page -> List of product (add, edit, delete)-> Product description
-- Dashboard  -> Main statistic (Average Rating, ), Visual statistic (Total revenue in %, Revenue by month)
+- Home Page -> List of product -> Product description
+- Dashboard  -> Main statistic (Average Rating... ), Visual statistic (Total revenue in %...)
 
 ### Mockups
 
@@ -82,6 +82,7 @@ Authentication/authorization is a nice-to-haves part
 ## Nice-to-haves
 
 - authentication/authorization
+- ability to add, edit, delete products
 - responsive design
 - add dark theme
 - animation of graphs/numbers
