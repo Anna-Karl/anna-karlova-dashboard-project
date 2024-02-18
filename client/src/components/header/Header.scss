@@ -1,0 +1,9 @@
+
+
+.header {
+  @apply flex-center-between p-4 border-0 border-b-2 border-solid;
+
+  &__logo {
+    @apply text-2xl text-black font-bold;
+  }
+}

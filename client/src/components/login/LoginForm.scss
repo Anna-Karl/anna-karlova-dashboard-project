@@ -1,0 +1,22 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.wrapper {
+    @apply relative inline-flex;
+    &__form{
+        @apply p-4 absolute right-2 w-44 z-20;
+        top: calc(100% + 1.4rem);
+        &-register {
+            @apply opacity-40 block text-center w-full;
+            font-size: 0.7rem;
+        }
+    }
+    &__button {
+        @apply shadow-icon;
+    }
+}
+
+// .avatar {
+
+// }
