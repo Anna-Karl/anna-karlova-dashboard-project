@@ -1,9 +1,9 @@
 # Project Title
-Dashboard: Admin Panel Statistic for Businesses
+Dashboard: Statistic for Businesses
 
 ## Overview
 
-The app is a comprehensive dashboard designed to streamline the management of local bakeries, providing owners and managers with valuable insights into sales performance, inventory management, and customer preferences.
+The app is a comprehensive dashboard designed to streamline the management of local bakery, providing owners and managers with valuable insights into sales performance, inventory management, and customer preferences.
 
 ### Problem
 
@@ -15,10 +15,11 @@ Owners and managers of bakeries will use this app to gain actionable insights in
 
 ### Features
 
-- As a user, I want to be able to view real-time sales data, including revenue, order volume, and average transaction value. 
+- As a user, I want to be able to view sales data, including revenue, order volume
+- As a user, I want to be able to see the description of each product item
+- As a user, I want to be able to see the customer reviews for each product item
 - As a user, I want to be able to analyze sales trends over time
 - As a user, I want to be able to analyze customer preferences
-- As a user, I want to be able to see the customer reviews for each product item
 - As a user, I want to be able to add, edit, and delete the existing items (nice-to-haves)
 
 
@@ -26,9 +27,8 @@ Owners and managers of bakeries will use this app to gain actionable insights in
 
 ### Tech Stack
 
-- React, TypeScript, MySQL (or PostgreSQL)
-- Client libraries: react, react-router-dom, axios,
-- Server libraries: knex, express
+- React.js, Node.js, MySQL
+- Libraries: react, react-router-dom, axios, knex, express
 - Style: Tailwind CSS
 - Graphs: Chart.js
 
@@ -39,7 +39,7 @@ Owners and managers of bakeries will use this app to gain actionable insights in
 ### Sitemap
 - Header -> Logo, Search product, SignIn
 - Sidebar -> Logo, Menu, Settings
-- Home Page -> List of product -> Product description
+- Home Page -> List of product -> Product description -> Product reviews
 - Dashboard  -> Main statistic (Average Rating... ), Visual statistic (Total revenue in %...)
 
 ### Mockups
@@ -48,20 +48,23 @@ Owners and managers of bakeries will use this app to gain actionable insights in
 
 ### Data
 
-- Product: name, picture, description, price, reviews, revenue
-- Sales: date, time, product, quantity, revenue
+- Products: id, name, picture, description, ingredients
+- Sales: transaction, id name date, day part, day type, quantity, price, cost
+- Reviews: id, name, user, date, rating, comment
 
 ### Endpoints
 
-GET /product: Retrieve inventory data
+GET /product: Retrieve products data
 GET /sales: Retrieve sales data
+GET /reviewst: Retrieve reviewss data
+'Nice-to-Haves':
 PUT /product: Update product item
 POST /product: Add product item
 DELETE /product: Delete product item
 
 ### Auth
 
-Authentication/authorization is a nice-to-haves part 
+Authentication/authorization is a 'nice-to-haves' part 
 
 ## Roadmap
 
