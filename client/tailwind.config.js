@@ -17,7 +17,16 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#5F3DF7'
+        primary: '#5F3DF7',
+        // purple: '#6C5ECF',
+        // 'light-blue': '#32A8E2',
+        // gray: {
+        //   400: '#9898ad',
+        //   500: '#6B6B7B',
+        //   600: '#5B5B6B',
+        //   800: '#353340',
+        //   900: '#272532',
+        // }
       },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out',
