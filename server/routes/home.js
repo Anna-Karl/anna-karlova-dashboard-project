@@ -40,29 +40,29 @@ router.get("/:id", async (req, res) => {
 });
 
 // Getting a single product data
-router.get("/:id", async (req, res) => {
-    const productId = req.params.id;
+// router.get("/:id", async (req, res) => {
+//     const productId = req.params.id;
   
-    try {
-      const data = await knex("products")
-        .select(
-          "products.product_id",
-          "products.product_name",
-          "products.ingredients",
-          "products.description",
-          "products.picture",
-        )
-        .where("products.product_id", productId)
-        .first();
-      if (!data) {
-        res.status(404).send("No such product id");
-      } else {
-        res.status(200).json(data);
-      }
-    } catch (error) {
-      res.status(400).send("Error retrieving inventory data", error);
-    }
-  });
+//     try {
+//       const data = await knex("products")
+//         .select(
+//           "products.product_id",
+//           "products.product_name",
+//           "products.ingredients",
+//           "products.description",
+//           "products.picture",
+//         )
+//         .where("products.product_id", productId)
+//         .first();
+//       if (!data) {
+//         res.status(404).send("No such product id");
+//       } else {
+//         res.status(200).json(data);
+//       }
+//     } catch (error) {
+//       res.status(400).send("Error retrieving inventory data", error);
+//     }
+//   });
 
   // getting reviews for a product
 router.get("/:id/reviews", async (req, res) => {
