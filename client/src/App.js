@@ -1,45 +1,26 @@
 import './App.scss';
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import Header from './components/header/Header';
-import HomePage from './pages/HomePage';
+import ProductListPage from './pages/ProductListPage';
+import ProductDetailsPage from './pages/ProductDetailsPage';
+import ReviewsPage from './pages/ReviewsPage';
+import DashboardPage from './pages/DashboardPage';
+import DashboardProductPage from './pages/DashboardProductPage';
+import NotFoundPage from './pages/NotFoundPage';
 
-function App() {
+export default function App() {
   return (
   <>
     <BrowserRouter>
-      <Header />
-      
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<HomePage />} />
-        {/* 
-        <Route
-          path="/warehouses/:warehouseId"
-          element={<WarehouseDetailsPage />}
-        />
-        <Route
-          path="/warehouses/:warehouseid/edit"
-          element={<EditWarehousePage />} 
-        />
-        <Route path="/warehouses/new" element={<NewWarehousePage />} />
-
-        <Route path="/inventories" element={<InventoryPage />} />
-        <Route
-          path="/inventories/:inventoryid"
-          element={<InventoryItemPage />}
-        />
-        <Route
-          path="/inventories/:inventoryid/edit"
-          element={<EditInventoryPage inventoryDetails={inventoryDetails} />}
-        />
-        <Route path="/inventories/new" element={<NewInventoryPage />} />
-
-        <Route path="*" element={<NotFoundPage />} /> */}
-      </Routes>
-      {/* <Footer /> */}
+        <Routes>
+          <Route path="/" element={<Navigate to="/products" />} />
+          <Route path="/products" element={<ProductListPage />} />
+          <Route path="/products/:productId" element={<ProductDetailsPage />} />
+          <Route path="/products/:productId/reviews" element={<ReviewsPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/dashboard/:productId" element={<DashboardProductPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
     </BrowserRouter>
   </>
   );
-}
-
-export default App;
+};

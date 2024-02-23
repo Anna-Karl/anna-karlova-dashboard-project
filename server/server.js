@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const home = require("./routes/home.js");
+const products = require("./routes/products.js");
 const dashboard = require("./routes/dashboard.js");
 
 const PORT = process.env.PORT || 8081;
@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'))
 
-app.use("/api/home", home);
+app.use("/api/products", products);
 app.use("/api/dashboard", dashboard);
 
 app.listen(PORT, () => {

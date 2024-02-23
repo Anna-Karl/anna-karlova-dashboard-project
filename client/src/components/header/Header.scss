@@ -1,4 +1,6 @@
-
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 .header {
   @apply flex-center-between p-4 border-0 border-b-2 border-solid;

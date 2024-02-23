@@ -1,0 +1,50 @@
+@use '../../styles/mixins' as * ;
+@use '../../styles/global' as * ;
+
+.sidebar {
+	@apply relative;
+	> div {
+		@apply text-center absolute w-full flex flex-col justify-between;
+		background-image: linear-gradient(to right, #e0e4fb, #c7cced);
+		min-height: 500px;
+		border-top-left-radius: 2rem;
+		border-bottom-left-radius: 2rem;
+		top: 50%;
+		transform: translateY(-30%);
+		@include shadow('lg', false);
+		border-top: 2px solid rgba(255, 255, 255, 0.7);
+		border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+
+		&__logo {
+			@apply w-8 block gdark:text-blue-300;
+			color: #0054be;
+		}
+
+		&__item {
+				&:last-child > a {
+					@apply mb-0;
+				}
+				> a {
+					@apply block mb-5 text-xl;
+
+					svg {
+						@apply mx-auto transition-colors fill-[#1c2034] gdark:fill-white gdark:opacity-80 gdark:transition-opacity;
+					}
+				}
+
+				&:hover svg {
+					@apply fill-[#666d91] gdark:fill-white gdark:opacity-100;
+				}
+
+				&.active svg {
+					@apply fill-primary gdark:fill-purple-400;
+				}
+			}
+		}
+	}
+
+
+
+// .button {
+// 	@apply block text-xl py-6 transition-transform;
+// }

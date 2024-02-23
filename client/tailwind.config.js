@@ -5,48 +5,47 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  theme: {
-    fontSize: {
-      sm: '1.1rem',
-      base: '1.46rem',
-      xl: '1.825rem',
-      '2xl': '2.2rem',
-      '3xl': '2.7rem',
-      '4xl': '3.25rem',
-      '5xl': '4.3rem',
-    },
-    extend: {
-      colors: {
-        primary: '#5F3DF7',
-        // purple: '#6C5ECF',
-        // 'light-blue': '#32A8E2',
-        // gray: {
-        //   400: '#9898ad',
-        //   500: '#6B6B7B',
-        //   600: '#5B5B6B',
-        //   800: '#353340',
-        //   900: '#272532',
-        // }
-      },
-      transitionTimingFunction: {
-        DEFAULT: 'ease-in-out',
-      },
-      transitionDuration: {
-        DEFAULT: '350ms',
-      }
-    },
-  },
+  darkMode: 'class',
+	theme: {
+		fontSize: {
+			xs: '1rem',
+			sm: '1.1rem',
+			tiny: '1.19rem',
+			base: '1.27rem',
+			lg: '1.4rem',
+			xl: '1.64rem',
+			'2xl': '1.825rem',
+			'3xl': '2.2rem',
+			'4xl': '2.7rem',
+			'5xl': '3.25rem',
+			'6xl': '4.3rem',
+			'7xl': '5.8rem'
+		},
+		extend: {
+			colors: {
+				primary: '#5F3DF7',
+				black: '#222'
+			},
+			transitionTimingFunction: {
+				DEFAULT: 'ease'
+			},
+			transitionDuration: {
+				DEFAULT: '250ms'
+			}
+		}
+	},
   plugins: [
+    require('tailwindcss-global-dark'),
     plugin (({addUtilities, addComponents}) => {
       addComponents({
         '.shadow-icon': {
-          border: 'none',
-          outline: 'none',
-          cursor: 'pointer',
-          padding: 'o.6rem',
+          // border: 'none',
+          // outline: 'none',
+          // cursor: 'pointer',
+          padding: 'o.4rem',
           display: 'flex',
           alignItems: 'center',
-          fontSize: '2.7rem',
+          fontSize: '2rem',
           transition: 'box-shadow .4s ease-in-out',          
           boxShadow: '0 4px 10px rgba(45, 8, 125, 0.2)',
           color: '#3353538',
