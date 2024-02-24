@@ -14,61 +14,47 @@ router.get("/", async (req, res) => {
     const data = await knex("products");
     res.status(200).json(data);
   } catch (error) {
-    res.status(400).send(`Error retrieving Users: ${error}`);
+    res.status(400).send(`Error retrieving inventories data: ${error}`);
   }
 });
 
-// get 1 product
+// get one product
 router.get("/:id", async (req, res) => {
+  const productId = req.params.id;
   try {
     const product = await knex("products")
-      .where({ product_id: req.params.id })
-      .first();
+    .select(
+      "products.product_id",
+      "products.product_name",
+      "products.ingredients",
+      "products.description",
+      "products.picture",
+      "reviews.comment",
+      "reviews.rating"
+    )
+    .join("reviews", "products.product_id", "=", "reviews.product_id")
+    .where("products.product_id", productId)
+    .first();
+      // .where({ product_id: req.params.id })
+    
 
-    if (product.length === 0) {
+    if (!product) {
       return res.status(404).json({
-        message: `product with ID ${req.params.id} not found`,
+        message: `Product with ID ${req.params.id} not found`,
       });
     }
-
     res.status(200).json(product);
   } catch (error) {
     res.status(500).json({
-      message: `Unable to retrieve product data for ID ${req.params.id}`,
+      message: `Unable to retrieve inventories data for ID ${req.params.id}`,
     });
   }
 });
 
-// Getting a single product data
-// router.get("/:id", async (req, res) => {
-//     const productId = req.params.id;
-  
-//     try {
-//       const data = await knex("products")
-//         .select(
-//           "products.product_id",
-//           "products.product_name",
-//           "products.ingredients",
-//           "products.description",
-//           "products.picture",
-//         )
-//         .where("products.product_id", productId)
-//         .first();
-//       if (!data) {
-//         res.status(404).send("No such product id");
-//       } else {
-//         res.status(200).json(data);
-//       }
-//     } catch (error) {
-//       res.status(400).send("Error retrieving inventory data", error);
-//     }
-//   });
-
-  // getting reviews for a product
+  // get reviews for a product
 router.get("/:id/reviews", async (req, res) => {
     const productId = req.params.id;
-  
-    try {
+     try {
       const data = await knex("reviews")
         .select(
           "reviews.review_id",
@@ -86,7 +72,7 @@ router.get("/:id/reviews", async (req, res) => {
         res.status(200).json(data);
       }
     } catch (error) {
-      res.status(400).send("Error retrieving inventories data", error);
+      res.status(400).send(`Error retrieving inventory data: ${error}`);
     }
   });
   

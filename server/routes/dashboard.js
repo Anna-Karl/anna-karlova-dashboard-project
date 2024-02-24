@@ -34,7 +34,7 @@ router.get("/:id", async (req, res) => {
         res.status(200).json(data);
       }
     } catch (error) {
-      res.status(400).send({ error: "Error retrieving inventory data" });
+      res.status(400).send(`Error retrieving inventory data: ${error}`);
     }
   });
 
@@ -55,7 +55,7 @@ router.get("/", async (req, res) => {
         )
       res.status(200).json(data);
     } catch (error) {
-      res.status(400).send("Error retrieving inventory data", error);
+      res.status(400).send(`Error retrieving inventory data: ${error}`);
     }
   });
 
