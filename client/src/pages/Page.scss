@@ -1,23 +1,27 @@
-@use '../styles/mixins' as *;
-@use '../styles/global' as *;
+@use "../styles/mixins" as *;
+@use "../styles/global" as *;
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 .wrapper {
-	@apply grid;
-	grid-template-columns: 1fr 18fr;
-	height: calc(100vh - 5rem);
+  @apply grid;
+  grid-template-columns: 1fr 18fr;
+  height: calc(100vh - 5rem);
+}
 
-	.content {
-		@apply rounded-3xl bg-[#ebeffd] gdark:bg-zinc-800;
-		z-index: 1;
-		@include shadow('lg', false);
-	}
+.content {
+  @apply rounded-3xl bg-[#ebeffd];
+  z-index: 1;
+  @include shadow("lg", false);
 }
 
 .main {
-	@apply px-6 pt-4 pb-14;
+  @apply px-6 pt-4 pb-14;
 }
+
+.heading {
+  @apply text-xl text-black mb-5 ml-8;
+}
+

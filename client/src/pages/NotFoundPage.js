@@ -12,7 +12,7 @@ export default function NotFound() {
             <Header />
             <main className="main">
     
-              <h1 className="text-3xl font-bold underline">Page Not Found</h1>
+              <h2 className="text-3xl font-bold underline">Page Not Found</h2>
               
             </main>
           </div>

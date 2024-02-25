@@ -1,22 +1,24 @@
 import React from "react";
-import Header from '../components/header/Header';
-import Sidebar from '../components/sidebar/Sidebar';
-import './Page.scss';
-
+import Header from "../components/header/Header";
+import Sidebar from "../components/sidebar/Sidebar";
+import Product from "../components/product/Product";
+import "./Page.scss";
 
 export default function ProductDetails() {
-    return (
-        <section className="wrapper">
-          <Sidebar />
+  return (
+    <section className="wrapper">
+      <Sidebar />
+      <div className="content">
+        <Header />
+        <main className="main">
+
+          <h2 className="heading">About Product</h2>
           <div className="content">
-            <Header />
-            <main className="main">
-    
-              <h1 className="text-3xl font-bold underline">Product Details!</h1>
-              
-            </main>
+            <Product />
           </div>
-        </section>
-      );
-    }
-    
+          
+        </main>
+      </div>
+    </section>
+  );
+}

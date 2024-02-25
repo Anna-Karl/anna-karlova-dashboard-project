@@ -1,36 +1,29 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/global' as *;
 
-
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 .wrapper-list {
-	@apply grid w-2/3 gap-8;
-	grid-template-columns: 1fr 4fr;
+	@apply flex-center-center flex-wrap gap-8 py-8;
+  }
 
-	.poster {
-		.image {
-			@apply rounded-lg;
-		}
+.listitem {
+	@apply relative block;
+	width: 25%;
+}
+
+.poster {
+	@apply rounded-lg overflow-hidden;
+	&:hover {
+		@apply shadow;
 	}
+}
 
-	.detail {
-		.heading {
-			@apply text-3xl font-bold mb-1 gdark:text-white;
-		}
-		.rating {
-			@apply font-bold text-3xl text-green-600 gdark:text-green-400 mb-4;
-		}
-		.title {
-			@apply mb-1.5 font-medium gdark:text-white;
-		}
-		> ul {
-			@apply list-none pl-0;
-			> li {
-				@apply block mb-2 text-sm gdark:text-white;
-				> span {
-					&:first-child {
-						@apply font-light w-24 mr-3;
-					}
-				}
-			}
-		}
+.title {
+	@apply text-xs text-black mt-3 font-medium transition-colors;
+	&:hover {
+		@apply text-primary;
 	}
 }

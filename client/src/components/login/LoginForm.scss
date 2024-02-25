@@ -1,22 +1,36 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/global' as *;
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.wrapper {
+.wrapper-login {
     @apply relative inline-flex;
-    &__form{
-        @apply p-4 absolute right-2 w-44 z-20;
-        top: calc(100% + 1.4rem);
-        &-register {
-            @apply opacity-40 block text-center w-full;
-            font-size: 0.7rem;
+
+    .button {
+		@apply shadow-icon w-10 rounded-full transition-colors duration-300 hover:bg-opacity-100;
+        img {
+            @apply rounded-full;
         }
-    }
-    &__button {
-        @apply shadow-icon;
-    }
+	}
+
+
+    // .form{
+    //     @apply p-4 absolute right-2 w-44 z-20;
+    //     top: calc(100% + 1.4rem);
+    //     background-color: #dbe0f0;
+
+    //     .register {
+    //         @apply text-gray-600 bg-transparent text-xs font-light mt-2 text-center w-full;
+    //     }
+    //     .loginButton {
+	// 		@apply mt-5 mb-1 text-center;
+	// 	}
+	// }
+	
 }
 
-// .avatar {
-
+// .button {
+// 	@apply py-1.5 px-7 text-white bg-primary bg-opacity-80 transition-colors duration-300 hover:bg-opacity-100 text-base rounded-lg;
 // }

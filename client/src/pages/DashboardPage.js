@@ -12,7 +12,7 @@ export default function Dashboard() {
             <Header />
             <main className="main">
     
-              <h1 className="text-3xl font-bold underline">Dashboard!</h1>
+              <h2 className="text-3xl font-bold underline">Dashboard!</h2>
               
             </main>
           </div>

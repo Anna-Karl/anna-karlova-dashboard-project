@@ -3,10 +3,10 @@
 
 .sidebar {
 	@apply relative;
-	> div {
-		@apply text-center absolute w-full flex flex-col justify-between;
+	.menu {
+		@apply text-center absolute w-full flex flex-col justify-center;
 		background-image: linear-gradient(to right, #e0e4fb, #c7cced);
-		min-height: 500px;
+		min-height: 25rem;
 		border-top-left-radius: 2rem;
 		border-bottom-left-radius: 2rem;
 		top: 50%;
@@ -15,29 +15,17 @@
 		border-top: 2px solid rgba(255, 255, 255, 0.7);
 		border-bottom: 2px solid rgba(255, 255, 255, 0.6);
 
-		&__logo {
-			@apply w-8 block gdark:text-blue-300;
-			color: #0054be;
-		}
-
-		&__item {
-				&:last-child > a {
-					@apply mb-0;
+		.item {
+			@apply block mb-5 text-2xl;
+				svg {
+					@apply mx-auto transition-colors fill-[#1c2034];
 				}
-				> a {
-					@apply block mb-5 text-xl;
-
-					svg {
-						@apply mx-auto transition-colors fill-[#1c2034] gdark:fill-white gdark:opacity-80 gdark:transition-opacity;
-					}
-				}
-
 				&:hover svg {
-					@apply fill-[#666d91] gdark:fill-white gdark:opacity-100;
+					@apply fill-[#666d91];
 				}
 
 				&.active svg {
-					@apply fill-primary gdark:fill-purple-400;
+					@apply fill-primary;
 				}
 			}
 		}

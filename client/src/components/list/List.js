@@ -5,15 +5,12 @@ import "./List.scss";
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
-const List = () => {
-  const [products, seProducts] = useState([]);
-  const [currentProduct, setCurrentProduct] = useState(null);
+const ProductList = () => {
+  const [products, setProducts] = useState([]);
 
   const fetchedProducts = async () => {
     try {
-      const response = await axios.get(
-        `${REACT_APP_SERVER_URL}/api/products`
-      );
+      const response = await axios.get(`${REACT_APP_SERVER_URL}/api/products`);
       const productData = response.data;
       setProducts(productData);
     } catch (error) {
@@ -25,14 +22,20 @@ const List = () => {
     fetchedProducts();
   }, []);
 
-
   return (
     <section className="wrapper-list">
-     
-
-
+      {products.map((item) => (
+        <div key={item.product_id} className="listitem">
+          <Link to={`/products/${item.product_id}`}>
+            <div className="poster">
+              <img src={item.picture} alt={item.product_name} />
+            </div>
+            <div className="title">{item.product_name}</div>
+          </Link>
+        </div>
+      ))}
     </section>
   );
 };
 
-export default List;
+export default ProductList;

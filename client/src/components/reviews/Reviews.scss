@@ -1,0 +1,28 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/global' as *;
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.wrapper-review{
+	@apply flex-center-between p-8;
+}
+.table-item {
+	@apply flex bg-white w-full py-2 px-5 rounded-md mb-3 text-sm;
+	box-shadow: 0 4px 10px rgba(45, 8, 125, 0.2);
+
+	.info {
+		@apply flex gap-5 w-14;
+			img {
+				@apply rounded w-8;
+			}
+		}
+	.comment {
+		@apply w-5/6;
+	}
+	.date {
+		@apply text-right;
+	}
+}
+

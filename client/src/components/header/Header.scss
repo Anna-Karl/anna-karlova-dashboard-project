@@ -1,11 +1,36 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/global' as *;
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
 .header {
-  @apply flex-center-between p-4 border-0 border-b-2 border-solid;
-
-  &__logo {
-    @apply text-2xl text-black font-bold;
+  @apply flex-center-between p-6 border-0 border-b-2 border-solid;
+  .logo {
+    @apply flex;
+    .title {
+      @apply text-2xl text-primary font-bold mb-3 mt-0;
+    }
+    img {
+      @apply w-8 mx-2;
+    }
   }
 }
+.search {
+  max-width: 50%;
+  .input {
+      @apply p-2 w-full text-xs rounded-md overflow-hidden block bg-white;
+      @include shadow();
+      &::placeholder {
+        @apply text-gray-400 font-light;
+      }
+    }
+}
+.button {
+  @apply shadow-icon w-10 rounded-full transition-colors duration-300 hover:bg-opacity-100;
+      img {
+          @apply rounded-full;
+      }
+}
+

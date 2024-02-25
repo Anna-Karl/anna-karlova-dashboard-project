@@ -1,0 +1,48 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/global' as *;
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.wrapper-product {
+	@apply flex-center-center flex-wrap gap-8 p-8;
+	.poster {
+		@apply flex-center-between gap-8 mb-4;
+		.image {
+			@apply rounded-lg w-52;
+		}
+		.detail {
+			.title {
+				@apply text-2xl font-bold mt-0 mb-4;
+			}
+			.ingredients {
+				@apply text-xs mb-4 font-light;
+			}
+			.description {
+				@apply text-sm font-semibold;
+			}
+		}
+	}
+	.heading-review {
+		@apply text-xl text-black mb-5;
+	  }
+	.comment-item {
+		@apply flex flex-col bg-white w-full py-2 px-5 rounded-md mb-3;
+		box-shadow: 0 4px 10px rgba(45, 8, 125, 0.2);
+
+		.customer {
+			@apply flex-center-between;
+			.user {
+				@apply flex text-2xs font-light gap-2;
+			}
+			.rating {
+				@apply text-sm font-bold  text-primary;
+			}
+		}
+		.comment {
+			@apply text-xs font-medium;
+		}
+		
+	}
+}		

@@ -5,9 +5,9 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  darkMode: 'class',
 	theme: {
 		fontSize: {
+      '2xs': '0.75rem',
 			xs: '1rem',
 			sm: '1.1rem',
 			tiny: '1.19rem',
@@ -35,7 +35,6 @@ module.exports = {
 		}
 	},
   plugins: [
-    require('tailwindcss-global-dark'),
     plugin (({addUtilities, addComponents}) => {
       addComponents({
         '.shadow-icon': {
