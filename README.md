@@ -15,24 +15,33 @@ Owners and managers of bakeries will use this app to gain actionable insights in
 
 ### Features
 
-Product Listing: Display a comprehensive list of products available on the platform.
-Product Descriptions: Provide detailed descriptions for each product to inform users about their attributes, ingredients, and other relevant information.
-Customer Reviews: Allow users to view customer reviews and ratings for each product to assist in their decision-making process.
-Navigation: Implement easy navigation features to enable users to find specific products quickly and efficiently.
-User-Friendly Interface: Design a user-friendly interface for displaying product details and reviews.
+- Product Listing - 
+display a comprehensive list of products available on the platform to give users an overview of the available options.
+
+- Product Descriptions - 
+provide detailed descriptions for each product, including attributes, ingredients, and other relevant information, to help users make informed decisions about their purchases.
+
+- Customer Reviews - 
+allow users to view customer reviews and ratings for each product, providing valuable insights into product quality and satisfaction to aid in the decision-making process.
+
+- Navigation - 
+implement easy navigation features to enable users to find specific products quickly and efficiently, enhancing the overall user experience.
+
+- User-Friendly Interface - 
+design a user-friendly interface for displaying product details and reviews, ensuring ease of use and accessibility for all users.
 
 
 ## Implementation
 
 ### Tech Stack
 
-Client - React, React Router DOM, Tailwind CSS, Sass, React Icons
-Server - Node.js, Express, Knex, mysql2, dotenv, cors
+- Client - React, React Router DOM, Tailwind CSS, Sass, React Icons
+- Server - Node.js, Express, Knex, mysql2, dotenv, cors
 
 
 ### APIs
 
-- No external APIs
+No external APIs
 
 ### Sitemap
 
@@ -44,14 +53,14 @@ Server - Node.js, Express, Knex, mysql2, dotenv, cors
 
 ### Mockups
 
-![ProductList](https://github.com/Anna-Karl/anna-karlova-dashboard-project/assets/product_list.png)
-![ProductDetails](https://github.com/Anna-Karl/anna-karlova-dashboard-project/assets/product_details.png)
-![ReviewsList](https://github.com/Anna-Karl/anna-karlova-dashboard-project/assets/reviews_list.png)
+![ProductList](https://github.com/Anna-Karl/anna-karlova-dashboard-project/raw/main/assets/product_list.png)
+![ProductDetails](https://github.com/Anna-Karl/anna-karlova-dashboard-project/raw/main/assets/product_details.png)
+![ReviewsList](https://github.com/Anna-Karl/anna-karlova-dashboard-project/raw/main/assets/reviews_list.png)
 
 ### Data
 
 Database schema:
-The Products Table has a one-to-many relationship with both the Sales Table and the Reviews Table, primary key - product_id.
+- The Products Table has a one-to-many relationship with both the Sales Table and the Reviews Table, primary key - product_id.
 
 ### Products Table:
 | Field         | Type    | Description                |
@@ -87,26 +96,46 @@ The Products Table has a one-to-many relationship with both the Sales Table and 
 
 ### Endpoints
 
-GET all products, endpoint: "/products ", example Response:
-"product": {
+GET all products, 
+endpoint: /products
+
+Description: Retrieves a list of all products available in the database.
+
+Example Response:
+```json
+  "product": {
     "product_id": 3,
     "product_name": "Cake",
     "ingredients": "flour, sugar, butter, eggs, milk, vanilla",
     "description": "Cake is a classic dessert made with flour, sugar, butter, eggs, and flavorings such as vanilla. It's moist, fluffy, and perfect for any celebration.",
-    "picture": "http://localhost:8080/images/cake.jpg"}
+    "picture": "http://localhost:8080/images/cake.jpg"
+  }
+```
+GET all reviews, 
+endpoint: /reviews
 
-GET all reviews, endpoint: "/reviews ", example Response:
-"review": {
+Description: Retrieves a list of all customer reviews for the products.
+
+Example Response:
+```json
+  "review": {
     "review_id": 26,
     "product_id": 1,
     "user_name": "User123",
     "rating": 5,
     "comment": "Absolutely delicious! I can't get enough of these alfajores.",
     "date": "2019-02-17T05:00:00.000Z",
-    "picture": "http://localhost:8080/images/alfajores.jpg"}
+    "picture": "http://localhost:8080/images/alfajores.jpg"
+  }
+```
+GET all sales, 
+endpoint: /dashboard
 
-GET all sales, endpoint: "/dashboard ", example Response:
-"sales": {
+Description: Retrieves a list of all sales transactions and associated details.
+
+Example Response:
+```json
+  "sales": {
     "transaction_id": 20,
     "product_id": 3,
     "product_name": "Cake",
@@ -117,6 +146,7 @@ GET all sales, endpoint: "/dashboard ", example Response:
     "unit_price": 5,
     "cost": 5
   }
+```
 
 ### Auth
 
