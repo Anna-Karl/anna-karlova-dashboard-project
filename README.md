@@ -1,13 +1,13 @@
 # Project Title
-Dashboard: Statistic for Businesses
+Bakery Management App
 
 ## Overview
 
-The app is a comprehensive dashboard designed to streamline the management of local bakery, providing owners and managers with valuable insights into sales performance, inventory management, and customer preferences.
+The Bakery Management App is a powerful tool tailored for local bakeries, aiming to simplify their day-to-day operations by offering insights into sales performance, inventory management, and customer preferences.
 
 ### Problem
 
-Local food businesses often struggle with effectively managing their operations, leading to challenges such as stockouts, inefficient inventory management, and difficulty in understanding customer preferences. The Dashboard addresses these pain points by offering a centralized platform for data analysis and empowering bakery owners to make informed decisions and optimize their operations for success.
+Local bakeries face numerous challenges in managing their operations efficiently. These include stock management issues, difficulties in understanding customer preferences, and lack of actionable insights into sales trends. Without access to comprehensive data and analytics, bakery owners struggle to make informed decisions and optimize their business processes for success.
 
 ### User Profile
 
@@ -15,52 +15,108 @@ Owners and managers of bakeries will use this app to gain actionable insights in
 
 ### Features
 
-- As a user, I want to be able to view sales data, including revenue, order volume
-- As a user, I want to be able to see the description of each product item
-- As a user, I want to be able to see the customer reviews for each product item
-- As a user, I want to be able to analyze sales trends over time
-- As a user, I want to be able to analyze customer preferences
-- As a user, I want to be able to add, edit, and delete the existing items (nice-to-haves)
+Product Listing: Display a comprehensive list of products available on the platform.
+Product Descriptions: Provide detailed descriptions for each product to inform users about their attributes, ingredients, and other relevant information.
+Customer Reviews: Allow users to view customer reviews and ratings for each product to assist in their decision-making process.
+Navigation: Implement easy navigation features to enable users to find specific products quickly and efficiently.
+User-Friendly Interface: Design a user-friendly interface for displaying product details and reviews.
 
 
 ## Implementation
 
 ### Tech Stack
 
-- React.js, Node.js, MySQL
-- Libraries: react, react-router-dom, axios, knex, express
-- Style: Tailwind CSS
-- Graphs: Chart.js
+Client - React, React Router DOM, Tailwind CSS, Sass, React Icons
+Server - Node.js, Express, Knex, mysql2, dotenv, cors
+
 
 ### APIs
 
-- No external APIs will be used for the first sprint
+- No external APIs
 
 ### Sitemap
-- Header -> Logo, Search product, SignIn
-- Sidebar -> Logo, Menu, Settings
-- Home Page -> List of product -> Product description -> Product reviews
-- Dashboard  -> Main statistic (Average Rating... ), Visual statistic (Total revenue in %...)
+
+- Home                     (the main landing page of the application)
+  - Products               (page listing all products available)
+    - Product Details      (page displaying details of a specific product with reviews for it)
+  - Reviews                (page displaying customer reviews sorted by date)
+- 404 Not Found            (page displayed when a route does not match any existing paths)
 
 ### Mockups
 
-![Mockup](https://github.com/Anna-Karl/anna-karlova-dashboard-project/assets/112638974/78ec730f-f65b-457c-9bb0-8c8321477e1f)
+![ProductList](https://github.com/Anna-Karl/anna-karlova-dashboard-project/assets/product_list.png)
+![ProductDetails](https://github.com/Anna-Karl/anna-karlova-dashboard-project/assets/product_details.png)
+![ReviewsList](https://github.com/Anna-Karl/anna-karlova-dashboard-project/assets/reviews_list.png)
 
 ### Data
 
-- Products: id, name, picture, description, ingredients
-- Sales: transaction, id name date, day part, day type, quantity, price, cost
-- Reviews: id, name, user, date, rating, comment
+Database schema:
+The Products Table has a one-to-many relationship with both the Sales Table and the Reviews Table, primary key - product_id.
+
+### Products Table:
+| Field         | Type    | Description                |
+|---------------|---------|----------------------------|
+| id            | INTEGER | Primary Key, Auto-increment|
+| name          | VARCHAR | Name of the product        |
+| picture       | VARCHAR | URL to the product image   |
+| description   | TEXT    | Description of the product |
+| ingredients   | TEXT    | Ingredients of the product |
+
+### Sales Table:
+| Field         | Type    | Description                                 |
+|---------------|---------|---------------------------------------------|
+| transaction_id| INTEGER | Primary Key, Auto-increment                 |
+| product_id    | INTEGER | Foreign Key referencing Products.id         |
+| product_name  | VARCHAR | Name of the product associated with the sale|
+| date          | DATE    | Date of the sale                            |
+| day_part      | VARCHAR | Time of the day (e.g., Morning, Afternoon)  |
+| day_type      | VARCHAR | Type of day (e.g., Weekday, Weekend)        |
+| quantity      | INTEGER | Quantity of the product sold                |
+| unit_price    | DECIMAL | Unit price of the product                   |
+| cost          | DECIMAL | Total cost of the sale                      |
+
+### Reviews Table:
+| Field         | Type    | Description                                |
+|---------------|---------|--------------------------------------------|
+| review_id     | INTEGER | Primary Key, Auto-increment                |
+| product_id    | INTEGER | Foreign Key referencing Products.id        |
+| user_name     | VARCHAR | Name of the user submitting the review     |
+| date          | DATE    | Date of the review                         |
+| rating        | INTEGER | Rating given by the user (1 to 5)          |
+| comment       | TEXT    | Comment provided by the user               |
 
 ### Endpoints
 
-GET /product: Retrieve products data
-GET /sales: Retrieve sales data
-GET /reviewst: Retrieve reviewss data
-'Nice-to-Haves':
-PUT /product: Update product item
-POST /product: Add product item
-DELETE /product: Delete product item
+GET all products, endpoint: "/products ", example Response:
+"product": {
+    "product_id": 3,
+    "product_name": "Cake",
+    "ingredients": "flour, sugar, butter, eggs, milk, vanilla",
+    "description": "Cake is a classic dessert made with flour, sugar, butter, eggs, and flavorings such as vanilla. It's moist, fluffy, and perfect for any celebration.",
+    "picture": "http://localhost:8080/images/cake.jpg"}
+
+GET all reviews, endpoint: "/reviews ", example Response:
+"review": {
+    "review_id": 26,
+    "product_id": 1,
+    "user_name": "User123",
+    "rating": 5,
+    "comment": "Absolutely delicious! I can't get enough of these alfajores.",
+    "date": "2019-02-17T05:00:00.000Z",
+    "picture": "http://localhost:8080/images/alfajores.jpg"}
+
+GET all sales, endpoint: "/dashboard ", example Response:
+"sales": {
+    "transaction_id": 20,
+    "product_id": 3,
+    "product_name": "Cake",
+    "date": "2016-10-30T04:00:00.000Z",
+    "day_part": "Afternoon",
+    "day_type": "Weekend",
+    "quantity": 1,
+    "unit_price": 5,
+    "cost": 5
+  }
 
 ### Auth
 
@@ -84,11 +140,10 @@ Authentication/authorization is a 'nice-to-haves' part
 
 ## Nice-to-haves
 
-- authentication/authorization
-- ability to add, edit, delete products
+- dashboard page
+- login component
+- search component
 - responsive design
-- add dark theme
-- animation of graphs/numbers
-- ability to choice period of time
-- add more graphs: purchasing patterns and trends
+- dark theme
+
 
