@@ -8,8 +8,6 @@ const knex = require("knex")(require("../knexfile"));
 
 const PORT = process.env.PORT || 8081;
 
-
-// get all reviews
 router.get("/", async (req, res) => {
   try {
     const data = await knex("reviews")

@@ -8,7 +8,6 @@ const knex = require("knex")(require("../knexfile"));
 
 const PORT = process.env.PORT || 8081;
 
-// get all products
 router.get("/", async (req, res) => {
   try {
     const data = await knex("products");
@@ -18,7 +17,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// get one product
 router.get("/:id", async (req, res) => {
   const productId = req.params.id;
   try {
@@ -35,9 +33,7 @@ router.get("/:id", async (req, res) => {
     .join("reviews", "products.product_id", "=", "reviews.product_id")
     .where("products.product_id", productId)
     .first();
-      // .where({ product_id: req.params.id })
-    
-
+ 
     if (!product) {
       return res.status(404).json({
         message: `Product with ID ${req.params.id} not found`,
@@ -51,7 +47,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-  // get reviews for a product
+
 router.get("/:id/reviews", async (req, res) => {
     const productId = req.params.id;
      try {
