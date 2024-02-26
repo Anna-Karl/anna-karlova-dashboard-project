@@ -38,9 +38,6 @@ module.exports = {
     plugin (({addUtilities, addComponents}) => {
       addComponents({
         '.shadow-icon': {
-          // border: 'none',
-          // outline: 'none',
-          // cursor: 'pointer',
           padding: 'o.4rem',
           display: 'flex',
           alignItems: 'center',

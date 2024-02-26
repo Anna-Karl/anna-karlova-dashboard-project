@@ -12,7 +12,7 @@ export default function ProductList() {
         <Header />
         <main className="main">
 
-          <h2 className="heading">All Products</h2>
+          <h2 className="heading">Our Products</h2>
           <div className="content">
               <List />
           </div>  

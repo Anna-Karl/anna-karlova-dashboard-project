@@ -25,3 +25,30 @@
   @apply text-xl text-black mb-5 ml-8;
 }
 
+.return {
+  @apply flex items-center ml-5;
+      svg {
+        @apply mx-auto transition-colors fill-[#1c2034] mb-5;
+      }
+      &:hover svg {
+        @apply fill-[#666d91];
+      }
+
+      &.active svg {
+        @apply fill-primary;
+      }
+}
+
+.main-notfound{
+  background-image: url("../assets/questionmark.jpg");
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.main-dashboard{
+  background-image: url("../assets/plusbutton.jpg");
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+

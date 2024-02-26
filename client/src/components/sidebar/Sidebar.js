@@ -1,10 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  AiOutlineBarChart,
-  AiOutlineLineChart,
-  AiOutlineRead,
-  AiOutlineBars
-} from "react-icons/ai";
+import { AiOutlineBarChart, AiOutlineProfile, AiOutlineRead, AiOutlineBars } from "react-icons/ai";
 import "./Sidebar.scss";
 
 
@@ -19,6 +14,11 @@ export default function Sidebar() {
               </Link>
             </li>
             <li className="item">
+              <Link to="/products/1">
+                <AiOutlineProfile />
+              </Link>
+            </li>
+            <li className="item">
               <Link to="/reviews">
                 <AiOutlineRead />
               </Link>
@@ -28,12 +28,7 @@ export default function Sidebar() {
                 <AiOutlineBarChart />
               </Link>
             </li>
-			<li className="item">
-              <Link to="/dashboard/:productId">
-                <AiOutlineLineChart />
-              </Link>
-            </li>
-          </ul>
+			    </ul>
         </nav>
     </aside>
   );

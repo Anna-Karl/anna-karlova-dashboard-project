@@ -5,6 +5,7 @@ import Product from "../components/product/Product";
 import "./Page.scss";
 
 export default function ProductDetails() {
+  
   return (
     <section className="wrapper">
       <Sidebar />

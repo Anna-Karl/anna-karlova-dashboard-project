@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { FaRegUserCircle } from "react-icons/fa";
+import { AiOutlineUser, AiOutlineArrowRight } from "react-icons/ai";
 import "./Product.scss";
+import { Link } from "react-router-dom";
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const MAX_PRODUCT_ID = 9;
 
 const ProductDescription = () => {
   const [selectedProduct, setSelectedProduct] = useState([]);
@@ -46,6 +48,17 @@ const ProductDescription = () => {
     }
   }, [productId]);
 
+  const getNextProductId = () => {
+    let nextId = parseInt(productId, 10) + 1;
+    if (nextId > MAX_PRODUCT_ID) {
+      nextId = 1;
+    }
+    return nextId;
+  };
+
+  const nextProductId = getNextProductId();
+  const nextProductUrl = `/products/${nextProductId}`;
+
   return (
     <section className="wrapper-product">
       {selectedProduct ? (
@@ -67,7 +80,7 @@ const ProductDescription = () => {
                   <div key={comment.review_id} className="comment-item">
                       <div className="customer">
                         <div className="user"> 
-                          <FaRegUserCircle />
+                          <AiOutlineUser />
                           <p>{comment.user_name}</p>
                         </div>
                         <div className="rating">{comment.rating}</div>
@@ -76,6 +89,16 @@ const ProductDescription = () => {
                   </div>
                 ))}
           </div>
+
+          {nextProductId <= MAX_PRODUCT_ID ? (
+            <div className="next">
+              <h2 className="heading-review">Next Product</h2>
+              <Link to={nextProductUrl}> 
+              <AiOutlineArrowRight />
+              </Link>
+            </div>
+          ) : null}
+
         </div>
       ) : (
         <p>Loading product details</p>
